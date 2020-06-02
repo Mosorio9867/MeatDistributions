@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Distribución de carnes</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email"> Ingrese su correo electrónico </string>
+    <string name="password"> Ingrese su contraseña </string>
+    <string name="login"> Iniciar sesión </string>
+    <string name="swipe_left_for_register"> Deslice para registrarse </string>
+    <string name="btn_register"> ¿No tienes cuenta?, Registrate </string>
+    <string name="btn_Withoutregister"> ¿Tienes cuenta?, Inicia sesión </string>
+    <string name="register"> Registrate </string>
+    <string name="your_name"> Nombre </string>
+    <string name="re_type_password"> Confirmar contraseña </string>
+    <string name="swipe_right_for_login"> Deslice para iniciar sesión </string>
+</resources>

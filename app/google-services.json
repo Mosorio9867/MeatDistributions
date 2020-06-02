@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "362470082740",
+    "firebase_url": "https://meatdistributions-6ef17.firebaseio.com",
+    "project_id": "meatdistributions-6ef17",
+    "storage_bucket": "meatdistributions-6ef17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362470082740:android:90a4e2ed804686c6512fe1",
+        "android_client_info": {
+          "package_name": "com.app.meatdistributions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362470082740-kf4if186b32gv0ofn9rgbvhblka20qqu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.meatdistributions",
+            "certificate_hash": "aad4d4d2bba05e7524a9c67b679b4b0ee09e2fbe"
+          }
+        },
+        {
+          "client_id": "362470082740-dugp0ndcb4on5fqpkb2fg34okcmbfib1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA01S-1aS__-8Ry9qHhILSKlaP86Bp953w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362470082740-dugp0ndcb4on5fqpkb2fg34okcmbfib1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
