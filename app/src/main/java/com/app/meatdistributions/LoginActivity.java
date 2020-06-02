@@ -21,6 +21,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static final String TAG = "LoginActivity";
 
     private FirebaseAuth mAuth;
+    private EditText editTextEmail;
+    private EditText editTextPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // Button click listeners
         findViewById(R.id.btn_login).setOnClickListener(this);
         findViewById(R.id.textRegister).setOnClickListener(this);
+
+        editTextEmail = (EditText) findViewById(R.id.et_email);
+        editTextPassword = (EditText) findViewById(R.id.et_password);
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -65,19 +70,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void login() {
-        mAuth.signInWithEmailAndPassword("manu9osorio@gmail.com", "1234567")
+        String email = editTextEmail.getText().toString();
+        String password = editTextPassword.getText().toString();
+
+        if (email.isEmpty()) {
+            Toast.makeText(LoginActivity.this, "El campo Correo electrónico es requerido", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            Toast.makeText(LoginActivity.this, "El campo Contraseña es requerido", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "El correo o la contraseña no es correcta, por favor verifique.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
