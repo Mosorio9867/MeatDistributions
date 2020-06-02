@@ -45,6 +45,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void getUSer(FirebaseUser user) {
         if (user != null) {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        } else {
+            mAuth.signOut();
         }
     }
 
@@ -63,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void login() {
-        mAuth.signInWithEmailAndPassword("manu9osorio@gmail.com", "123456")
+        mAuth.signInWithEmailAndPassword("manu9osorio@gmail.com", "1234567")
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
