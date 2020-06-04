@@ -5,10 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".CustomerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Clientest" />
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolBarStyle"
+        tools:ignore="MissingConstraints"></com.google.android.material.appbar.MaterialToolbar>
 
 </FrameLayout>

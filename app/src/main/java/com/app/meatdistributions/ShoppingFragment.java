@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.google.android.material.appbar.MaterialToolbar;
 
-public class HomeFragment extends Fragment {
+public class ShoppingFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_products, container, false);
 
         MaterialToolbar toolbar = view.findViewById(R.id.toolbar);
-        toolbar.setTitle("Inicio");
+        toolbar.setTitle("Vender");
 
         return view;
     }
