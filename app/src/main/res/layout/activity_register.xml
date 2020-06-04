@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegisterFragment">
+    tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/tv_logo"
@@ -21,7 +21,7 @@
         android:textSize="50sp" />
 
     <EditText
-        android:id="@+id/et_name"
+        android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
@@ -35,7 +35,7 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/et_email"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
@@ -49,7 +49,7 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
@@ -63,7 +63,7 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/et_repassword"
+        android:id="@+id/editTextConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
@@ -81,7 +81,7 @@
         android:layout_weight="1">
 
         <Button
-            android:id="@+id/btn_register"
+            android:id="@+id/buttomregister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -97,7 +97,7 @@
             android:id="@+id/textLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btn_register"
+            android:layout_below="@id/buttomregister"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/roboto_regular"
