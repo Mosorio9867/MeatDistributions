@@ -21,4 +21,17 @@
     <string name="your_name"> Nombre </string>
     <string name="re_type_password"> Confirmar contraseña </string>
     <string name="swipe_right_for_login"> Deslice para iniciar sesión </string>
+    <string name="title_activity_change_name">ChangeNameActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="current_name"> Nombre actual </string>
+    <string name="new_name"> Ingrese el nuevo nombre </string>
+
 </resources>

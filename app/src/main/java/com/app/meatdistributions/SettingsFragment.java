@@ -10,8 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +25,7 @@ public class SettingsFragment extends Fragment {
 
     private FirebaseAuth mAuth;
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private SettingsAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private List<Setting> settings;
 
@@ -51,9 +53,15 @@ public class SettingsFragment extends Fragment {
         settings.add(new Setting("Cambiar contraseña"));
         settings.add(new Setting("Eliminar cuenta"));
 
-        // specify an adapter (see also next example)
         mAdapter = new SettingsAdapter(settings);
         recyclerView.setAdapter(mAdapter);
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity(), recyclerView,
+                new SettingsAdapter.ClickListener() {
+                    @Override
+                    public void onClick(View view, int position) {
+                        actionEventList(position);
+                    }
+                }));
 
         Button button = (Button) view.findViewById(R.id.btn_logout);
         button.setOnClickListener(new View.OnClickListener() {
@@ -63,9 +71,15 @@ public class SettingsFragment extends Fragment {
                 startActivity(new Intent(getContext(), LoginActivity.class));
             }
         });
-
         return view;
+    }
 
+    private void actionEventList(int position) {
+        switch (position) {
+            case 0:
+                startActivity(new Intent(getContext(), ChangeNameActivity.class));
+                break;
+        }
     }
 
     class Setting {
