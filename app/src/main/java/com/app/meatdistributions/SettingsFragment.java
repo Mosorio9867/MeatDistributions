@@ -13,10 +13,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,11 +30,20 @@ public class SettingsFragment extends Fragment {
     private SettingsAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private List<Setting> settings;
+    private TextView textViewName;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
+    }
+
+    private void getUSer(FirebaseUser user) {
+        if (user == null) {
+            startActivity(new Intent(getContext(), LoginActivity.class));
+        } else {
+            textViewName.setText(user.getDisplayName());
+        }
     }
 
     @Override
@@ -41,6 +52,8 @@ public class SettingsFragment extends Fragment {
 
         MaterialToolbar toolbar = view.findViewById(R.id.toolbar);
         toolbar.setTitle("Configuración");
+
+        textViewName = view.findViewById(R.id.textViewName);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -71,6 +84,10 @@ public class SettingsFragment extends Fragment {
                 startActivity(new Intent(getContext(), LoginActivity.class));
             }
         });
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        getUSer(currentUser);
+
         return view;
     }
 

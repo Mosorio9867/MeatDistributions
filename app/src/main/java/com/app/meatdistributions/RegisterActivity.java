@@ -83,7 +83,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                                 updateUser();
                             } else {
                                 Toast.makeText(RegisterActivity.this, "Hubo un problema al registrar el usuario, intente mas tarde", Toast.LENGTH_SHORT).show();
