@@ -33,5 +33,6 @@
 
     <string name="current_name"> Nombre actual </string>
     <string name="new_name"> Ingrese el nuevo nombre </string>
+    <string name="save"> Guardar </string>
 
 </resources>

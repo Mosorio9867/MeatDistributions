@@ -27,11 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //loading the default fragment
-        loadFragment(new HomeFragment());
-
         bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+
+        //loading the default fragment
+        if (getIntent().getStringExtra("fragmentNumber") != null) {
+            changeFrangement(Integer.parseInt(getIntent().getStringExtra("fragmentNumber")));
+        } else {
+            changeFrangement(0);
+        }
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -46,6 +50,26 @@ public class MainActivity extends AppCompatActivity {
     private void getUSer(FirebaseUser user) {
         if (user == null) {
             startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        }
+    }
+
+    private void changeFrangement(int position) {
+        switch (position) {
+            case 0:
+                bottomNavigation.setSelectedItemId(R.id.navigation_home);
+                break;
+            case 1:
+                bottomNavigation.setSelectedItemId(R.id.navigation_customers);
+                break;
+            case 2:
+                bottomNavigation.setSelectedItemId(R.id.navigation_products);
+                break;
+            case 3:
+                bottomNavigation.setSelectedItemId(R.id.navigation_shopping);
+                break;
+            case 4:
+                bottomNavigation.setSelectedItemId(R.id.navigation_settings);
+                break;
         }
     }
 

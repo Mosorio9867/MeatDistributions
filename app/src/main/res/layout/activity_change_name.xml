@@ -26,13 +26,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/appBarLayout"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/et_custom"
-        android:editable="false"
+        android:enabled="false"
         android:fontFamily="@font/roboto_regular"
         android:hint="@string/current_name"
         android:inputType="text"
         android:padding="15dp"
         android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/editTextNewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextCurrentName"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/et_custom"
+        android:enabled="false"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/new_name"
+        android:inputType="text"
+        android:padding="15dp"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNewName"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_custom"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/save"
+        android:textColor="@android:color/white" />
 
 </RelativeLayout>
